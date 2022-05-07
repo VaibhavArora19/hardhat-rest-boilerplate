@@ -1,0 +1,30 @@
+{
+  "name": "hemlock-street-rest-boilerplate",
+  "version": "1.0.0",
+  "description": "HemlockStreet REST Boilerplate",
+  "main": "api/app.js",
+  "scripts": {
+    "simulate": "npx hardhat node",
+    "deploy": "npx hardhat run solidity/scripts/deploy.js --network localhost",
+    "testContracts": "npx hardhat test",
+    "networks": "node utils/showNetworks.js",
+    "deployTo": "npx hardhat run solidity/scripts/deploy.js --network",
+    "api": "nodemon api/app",
+    "reset": "node ./utils/cleanup.js"
+  },
+  "author": "ctnava.github.io",
+  "license": "MIT",
+  "dependencies": {
+    "@chainlink/contracts": "^0.4.0",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@openzeppelin/contracts": "^4.6.0",
+    "body-parser": "^1.20.0",
+    "chai": "^4.3.6",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "ethers": "^5.6.4",
+    "express": "^4.17.3",
+    "hardhat": "^2.9.3",
+    "mocha": "^10.0.0"
+  }
+}
