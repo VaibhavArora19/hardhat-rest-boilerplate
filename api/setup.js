@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 
-function initApp() {
+exports.initApp  = () => {
     const app = express();
     // app.use(bodyParser.raw({type: 'application/octet-stream', limit:'10gb'}));
     app.use(bodyParser.json());
@@ -11,4 +11,3 @@ function initApp() {
 }
 
 
-module.exports = { initApp }

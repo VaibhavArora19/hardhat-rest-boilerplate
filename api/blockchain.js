@@ -2,11 +2,11 @@ const { ethers } = require("ethers");
 const extractedObject = require("../lib/json.js");
 const getProvider = require('../lib/providers.js');
 
-function Contract(address, abi, chainId) {
+exports.Contract = (address, abi, chainId) => {
   return new ethers.Contract(address, abi, getProvider(chainId))
 }
 
-function loadContract(chainId, name) {
+exports.loadContract = (chainId, name) => {
   const artifactsDir = `./data/${chainId}`;
   const address = extractedObject(artifactsDir, `${name}-address`).address;
   const abi = extractedObject(artifactsDir, name).abi;
@@ -14,4 +14,3 @@ function loadContract(chainId, name) {
 }
 
 
-module.exports = { Contract, loadContract }

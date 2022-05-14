@@ -3,7 +3,7 @@ app.get('/', (req, res)=>{res.json("Hello, welcome to my back end! Now git out."
 
 
 const { loadContract } = require("./blockchain.js");
-async function getOracleAddress(chainId) {
+const getOracleAddress =  async (chainId) => {
     const FissionEngine = loadContract(chainId, "FissionEngine");
     if (FissionEngine === false) return false; 
     const address = await FissionEngine.priceFeedAddress();
